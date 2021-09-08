@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home | Ig.News</title>
+        <title>Home | UnReact</title>
       </Head>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
