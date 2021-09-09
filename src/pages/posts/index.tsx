@@ -23,7 +23,7 @@ export default function Posts({ posts }: PostsProps) {
   return (
     <>
       <Head>
-        <title> Posts | UnReact </title>
+        <title> Posts | .dev Blog </title>
       </Head>
 
       <main className={styles.container}>

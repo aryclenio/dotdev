@@ -18,7 +18,7 @@ export default function Post({ post }: PostProps) {
   return (
     <>
       <Head>
-        <title>{post.title} | UnReact </title>
+        <title>{post.title} | .dev Blog </title>
       </Head>
       <main className={styles.container}>
         <article className={styles.post}>
@@ -39,6 +39,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
 
   const prismic = getPrismicClient(req)
   const response = await prismic.getByUID('publication', String(slug), {})
+  console.log(response)
   const post = {
     slug,
     title: RichText.asText(response.data.title),

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home | UnReact</title>
+        <title>Home | .dev Blog</title>
       </Head>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
