@@ -9,12 +9,12 @@ export default function Home() {
       </Head>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
-          <span>👋🏼 Hey, welcome</span>
+          <span>👋🏼 Hey, welcome to my blog</span>
           <h1>
-            News about the <span>React</span> world.
+            Here you will be always updated about the <span>.dev</span> world.
           </h1>
         </section>
-        <img src="/images/avatar.svg" alt="Girl coding" />
+        <img src="/images/avatar2.png" alt="Girl coding" />
       </main>
     </>
   );

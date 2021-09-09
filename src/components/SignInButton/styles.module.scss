@@ -28,4 +28,10 @@
   &:hover {
     filter: brightness(0.8);
   }
+
+  @media screen and (max-width: 768px) {
+    p {
+      display: none;
+    }
+  }
 }

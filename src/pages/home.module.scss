@@ -7,6 +7,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  img {
+    width: 30rem;
+  }
+  @media screen and (max-width: 768px) {
+    img {
+      display: none;
+    }
+  }
 }
 
 .hero {
@@ -18,13 +27,17 @@
   }
 
   h1 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     line-height: 4.5rem;
     font-weight: 900;
     margin-top: 2.5rem;
 
     span {
       color: var(--cyan-500);
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 3rem;
     }
   }
 
