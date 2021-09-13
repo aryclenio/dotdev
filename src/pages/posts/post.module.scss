@@ -48,10 +48,12 @@
   }
 
   pre {
-    background-color: var(--gray-700);
+    background-color: var(--gray-600);
     border-radius: 0.5rem;
     padding: 1rem;
     margin: 1rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   &.previewContent {
