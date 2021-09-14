@@ -2,9 +2,11 @@
 import { GetServerSideProps } from "next"
 import Head from "next/head"
 import { RichText } from "prismic-dom"
+import { useEffect } from "react";
 import { getPrismicClient } from "../../services/prismic"
+import { htmlSerializer, linkResolver } from "../../utils/htmlSerializer";
 import styles from './post.module.scss';
-
+import Prism from 'prismjs'
 interface PostProps {
   post: {
     slug: string;
@@ -15,6 +17,10 @@ interface PostProps {
 }
 
 export default function Post({ post }: PostProps) {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [])
+
   return (
     <>
       <Head>
@@ -43,7 +49,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
   const post = {
     slug,
     title: RichText.asText(response.data.title),
-    content: RichText.asHtml(response.data.content),
+    content: RichText.asHtml(response.data.content, linkResolver, htmlSerializer),
     updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
       day: '2-digit',
       month: 'long',

@@ -2,9 +2,9 @@ import { AppProps } from "next/app";
 import { Header } from "../components/Header";
 import { Provider as NextAuthProvider } from "next-auth/client";
 import Script from 'next/script'
-
-
 import "../styles/global.scss";
+import "../styles/prism.css";
+
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as gtag from '../lib/gtag'
