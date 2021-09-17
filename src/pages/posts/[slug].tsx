@@ -6,7 +6,8 @@ import { useEffect } from "react";
 import { getPrismicClient } from "../../services/prismic"
 import { htmlSerializer, linkResolver } from "../../utils/htmlSerializer";
 import Prism from 'prismjs'
-import { PostContentContainer } from "./styles";
+import styled from 'styled-components'
+
 interface PostProps {
   post: {
     slug: string;
@@ -15,6 +16,87 @@ interface PostProps {
     updatedAt: string;
   }
 }
+
+export const PostContentContainer = styled.main`
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+
+  .post {
+    max-width: 850px;
+    margin: 3rem auto 0 0;
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+    }
+
+    time {
+      font-size: 1rem;
+      color: var(--gray-300);
+      margin-top: 1.5rem;
+      display: block;
+    }
+  }
+  .postContent {
+    margin-top: 2rem;
+    line-height: 2rem;
+    font-size: 1.15rem;
+    color: ${({ theme }) => theme.text};
+    text-align: justify;
+
+    .block-img {
+      display: flex;
+      img {
+        max-width: 90%;
+        margin: 0 auto;
+        border-radius: 0.75rem;
+      }
+    }
+    a {
+      color: var(--cyan-500);
+      font-weight: bold;
+    }
+
+    p,
+    ul {
+      margin: 1.5rem 0;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    pre {
+      background-color: #08090a;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin: 1rem;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 0.95rem;
+    }
+
+    &.previewContent {
+      background: linear-gradient(var(--gray-100), transparent);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .post {
+      margin: 3rem auto 0;
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+`;
 
 export default function Post({ post }: PostProps) {
   useEffect(() => {
