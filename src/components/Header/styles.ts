@@ -1,11 +1,14 @@
-.headerContainer {
-  height: 5rem;
-  border-bottom: 1px solid var(--gray-800);
-}
+import styled from "styled-components";
 
-.headerContent {
+export const HeaderContainer = styled.header`
+  height: 4rem;
+  border-bottom: 1px solid var(--gray-800);
+  background-color: #242424;
+`;
+
+export const HeaderContent = styled.div`
   max-width: 1120px;
-  height: 5rem;
+  height: 4rem;
   margin: 0 auto;
   padding: 0 2rem;
 
@@ -27,7 +30,7 @@
       padding: 0 0.5rem;
       height: 5rem;
       line-height: 5rem;
-      color: var(--gray-300);
+      color: #a8a8b3;
       transition: color 0.2s;
 
       & + a {
@@ -38,11 +41,11 @@
       }
 
       &:hover {
-        color: var(--white);
+        color: #fafafa;
       }
 
       &.active {
-        color: var(--white);
+        color: #fafafa;
         font-weight: bold;
       }
 
@@ -55,7 +58,7 @@
         bottom: 0;
         left: 0;
         background: var(--yellow-500);
-        bottom: 1px;
+        bottom: 9px;
       }
     }
   }
@@ -72,4 +75,4 @@
       margin-left: 1rem;
     }
   }
-}
+`;

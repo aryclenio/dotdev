@@ -14,7 +14,7 @@ export default function Home() {
             Here you will be always updated about the <span>.dev</span> world.
           </h1>
         </section>
-        <img src="/images/avatar2.png" alt="Girl coding" />
+        <img src={`/images/avatars/avt${Math.floor(Math.random() * (3) + 1)}.svg`} alt="Girl coding" />
       </main>
     </>
   );

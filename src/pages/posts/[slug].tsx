@@ -5,8 +5,8 @@ import { RichText } from "prismic-dom"
 import { useEffect } from "react";
 import { getPrismicClient } from "../../services/prismic"
 import { htmlSerializer, linkResolver } from "../../utils/htmlSerializer";
-import styles from './post.module.scss';
 import Prism from 'prismjs'
+import { PostContentContainer } from "./styles";
 interface PostProps {
   post: {
     slug: string;
@@ -26,16 +26,16 @@ export default function Post({ post }: PostProps) {
       <Head>
         <title>{post.title} | .dev Blog </title>
       </Head>
-      <main className={styles.container}>
-        <article className={styles.post}>
+      <PostContentContainer>
+        <article className="post">
           <h1>{post.title}</h1>
           <time>{post.updatedAt}</time>
           <div
             dangerouslySetInnerHTML={{ __html: post.content }}
-            className={styles.postContent}
+            className="postContent"
           />
         </article>
-      </main>
+      </PostContentContainer>
     </>
   )
 }

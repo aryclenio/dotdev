@@ -1,17 +1,23 @@
 import { AppProps } from "next/app";
 import { Header } from "../components/Header";
 import { Provider as NextAuthProvider } from "next-auth/client";
+import { ThemeProvider } from "styled-components";
+import GlobalTheme from "../styles/global";
+import { lightTheme, darkTheme } from "../styles/theme";
 import Script from 'next/script'
-import "../styles/global.scss";
 import "../styles/prism.css";
-
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as gtag from '../lib/gtag'
 
 function MyApp({ Component, pageProps }: AppProps) {
-
   const router = useRouter()
+  const [isDark, setIsDark] = useState(true)
+
+  const toggleTheme = () => {
+    setIsDark(!isDark)
+  }
+
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url)
@@ -24,15 +30,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <NextAuthProvider session={pageProps.session}>
-      {/* Global Site Tag (gtag.js) - Google Analytics */}
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
-      <Script
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        />
+        <Script
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -40,10 +46,12 @@ function MyApp({ Component, pageProps }: AppProps) {
               page_path: window.location.pathname,
             });
           `,
-        }}
-      />
-      <Header />
-      <Component {...pageProps} />
+          }}
+        />
+        <GlobalTheme />
+        <Header toggleTheme={toggleTheme} isDark={isDark} />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </NextAuthProvider>
   );
 }

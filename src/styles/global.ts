@@ -1,3 +1,19 @@
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
+*,
+*::after,
+*::before {
+box-sizing: border-box;  
+}
+body {
+  background: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
+  margin: 0;    
+  padding: 0;    
+  font-family: sans-serif;    
+  transition: all 0.25s linear;
+}
 * {
   margin: 0;
   padding: 0;
@@ -15,8 +31,8 @@
   --gray-850: #1f2729;
   --gray-900: #121214;
 
-  --cyan-500: #017cfd;
-  --yellow-500: #017cfd;
+  --cyan-500: #FF725E;
+  --yellow-500: #FF725E;
 }
 
 @media (max-width: 1080px) {
@@ -29,11 +45,6 @@
   html {
     font-size: 87.5%;
   }
-}
-
-body {
-  background: var(--gray-850);
-  color: var(--white);
 }
 
 body,
@@ -52,3 +63,4 @@ a {
   color: inherit;
   text-decoration: none;
 }
+`;

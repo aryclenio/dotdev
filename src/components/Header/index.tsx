@@ -1,26 +1,31 @@
-import styles from './styles.module.scss'
 import { ActiveLink } from '../ActiveLink';
-import { SignInButton } from '../SignInButton'
+import ToogleTheme from '../ToogleTheme'
+import { HeaderContainer, HeaderContent } from './styles'
 
-export function Header() {
+interface HeaderProps {
+  toggleTheme: () => void;
+  isDark: boolean;
+}
+
+export function Header({ toggleTheme, isDark }: HeaderProps) {
   return (
-    <header className={styles.headerContainer}>
-      <div className={styles.headerContent}>
-        <ActiveLink href="/" activeClassName={styles.active}>
+    <HeaderContainer>
+      <HeaderContent>
+        <ActiveLink href="/" activeClassName="active">
           <img src="/images/logo.svg" alt="ig.news" />
         </ActiveLink>
         <nav>
-          <ActiveLink href="/" activeClassName={styles.active}>
+          <ActiveLink href="/" activeClassName="active">
             <a>Home</a>
           </ActiveLink>
 
-          <ActiveLink href="/posts" activeClassName={styles.active}>
+          <ActiveLink href="/posts" activeClassName="active">
             <a>Posts</a>
           </ActiveLink>
         </nav>
-        <SignInButton />
-      </div>
-    </header>
+        <ToogleTheme toggleTheme={toggleTheme} isDark={isDark} />
+      </HeaderContent>
+    </HeaderContainer>
   )
 }
 
