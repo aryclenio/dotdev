@@ -106,7 +106,7 @@ export default function Post({ post }: PostProps) {
   return (
     <>
       <Head>
-        <title>{post.title} | .dev Blog </title>
+        <title>{post.title} | Looping Bits Blog </title>
       </Head>
       <PostContentContainer>
         <article className="post">

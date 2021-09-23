@@ -22,6 +22,8 @@ export default class MyDocument extends Document {
           />
           <link rel="shortcut icon" href="favicon.ico" type="image/xpng" />
           <script data-ad-client="ca-pub-3269835450296202" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <meta name="description" content="Looping bits is a place to be connected with the news about the development world." />
+          <meta name="theme-color" content="#FF725E" />
         </Head>
         <body>
           <Main />

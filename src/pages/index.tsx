@@ -2,19 +2,26 @@ import Head from "next/head";
 import styles from "./home.module.scss";
 
 export default function Home() {
+
+  const images = [
+    '/images/avatars/avt1.svg',
+    '/images/avatars/avt2.svg',
+    '/images/avatars/avt3.svg'
+  ]
+
   return (
     <>
       <Head>
-        <title>Home | .dev Blog</title>
+        <title>Home | Looping Bits</title>
       </Head>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
-          <span>👋🏼 Hey, welcome to my blog</span>
+          <span>Welcome to looping bits 🙋🏻‍♀️</span>
           <h1>
-            Here you will be always updated about the <span>.dev</span> world.
+            Keep updated about the <span>loops</span> of programming world.
           </h1>
         </section>
-        <img src={`/images/avatars/avt${Math.floor(Math.random() * (3) + 1)}.svg`} alt="Girl coding" />
+        <img src={images[Math.floor(Math.random() * images.length)]} alt="Girl coding" />
       </main>
     </>
   );

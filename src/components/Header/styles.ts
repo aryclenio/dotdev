@@ -16,7 +16,7 @@ export const HeaderContent = styled.div`
   align-items: center;
 
   img {
-    width: 100px;
+    width: 50px;
     cursor: pointer;
   }
 

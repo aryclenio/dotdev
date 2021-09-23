@@ -69,7 +69,7 @@ export default function Posts({ posts }: PostsProps) {
   return (
     <>
       <Head>
-        <title> Posts | .dev Blog </title>
+        <title> Posts | Looping Bits Blog </title>
       </Head>
 
       <PostListContainer>
