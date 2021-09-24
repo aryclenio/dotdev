@@ -22,7 +22,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/lib/gtag.js"
+    "src/lib/gtag.js",
+    "next-sitemap.js"
   ],
   "exclude": [
     "node_modules"
