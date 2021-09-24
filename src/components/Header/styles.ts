@@ -16,12 +16,12 @@ export const HeaderContent = styled.div`
   align-items: center;
 
   img {
-    width: 50px;
+    width: 100px;
     cursor: pointer;
   }
 
   nav {
-    margin-left: 5rem;
+    margin-left: 3rem;
     height: 5rem;
 
     a {
@@ -69,7 +69,7 @@ export const HeaderContent = styled.div`
 
   @media screen and (max-width: 768px) {
     img {
-      width: 50px;
+      width: 60px;
     }
     nav {
       margin-left: 1rem;
