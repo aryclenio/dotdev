@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://www.loopingbits.com/api/sitemap
+# Host
+Host: https://loopingbits.com
+
+# Sitemaps
+Sitemap: https://loopingbits.com/sitemap.xml
